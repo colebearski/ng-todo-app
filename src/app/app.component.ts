@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  // Empty array to capture our form value input
   todoArray = [];
   todo;
 
+  // Add todo item
   addTodo(value) {
     if (value !== "") {
       this.todoArray.push(value)
@@ -17,7 +19,7 @@ export class AppComponent {
     }
   }
 
-  /*delete item*/
+  // Delete todo item
   deleteItem(todo) {
     for (let i = 0; i <= this.todoArray.length; i++) {
       if (todo == this.todoArray[i]) {
@@ -26,11 +28,11 @@ export class AppComponent {
     }
   }
 
-  // submit Form
+  // Submit todo item
   todoSubmit(value: any) {
     if (value !== "") {
       this.todoArray.push(value.todo)
-      //this.todoForm.reset()
+      // this.todoForm.reset()
     } else {
       alert('Field required **')
     }
